@@ -4,8 +4,11 @@
 <head>
     <title></title>
     <meta charset="utf-8">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
     <style>
-        body{ font-size: 1.em;
+        body{ font-size: 14px;
+        font-family:Arial, Helvetica, sans-serif;
                 text-align: center;
                 color: #5a0000;
                 display: block;
@@ -14,35 +17,55 @@
         }
         #main{
             background-color: #ffdac1;
+            
             display: block;
         }
-        #title{
+        #title{ font-size: 52px;
 
         }
         #img-div{
-               background-color: #ff8111;
+               background-color: #ffdac1;
+               display: block;
                text-align: center;
                padding: 20px;
+               width: auto;
+               height: auto;
+               position: relative;
                
-        }
+        } 
+
+         /*user story 8 and 9*/
         #image{ height: auto;
-                max-width: 100pct;
+                max-width: 100%;
+                margin: auto;
+                display: block;
         }
         ul{
             list-style-image: url("https://i.ibb.co/cxkJtJ7/lotus.png");
+            font-size: 1.2em;
             }
+        #tribute-info{ 
+            text-align:start;
+            padding: auto;
+            margin-left:  400px;
+            margin-right: 400px;
+        }
     </style>
 </head>
 <body>
-    <div id="main">
+     <!-- user story 1 -->
+    <div id="main">  
+        <!-- user story 2 -->
         <h1 id="title"> Iroh</h1>
-        <p>The Dragon of the West</p>
-
+        <p style="font-weight: bold;">The Dragon of the West</p>
+        <!-- user story 3 -->
         <div id="img-div">
+            <!-- user story 4  -->
             <img id="image" src="https://georgetownvoice.com/wp-content/uploads/2020/08/iroh-photo.jpg" alt="Picture of uncle Iroh" >
-            <p> Iroh (Center) and the members of The Order of the White Lotus during The Seige of Ba Sing Se. </p>
+            <!-- user story 5 -->
+            <p id="img-caption"> Iroh (Center) and the members of The Order of the White Lotus during The Seige of Ba Sing Se. </p>
         </div>
-
+        <!-- user story 6 -->
         <div id="tribute-info">
             
             <h2>Here are some details and events during the life of  Iroh</h2>
@@ -71,9 +94,13 @@
             
             <p><q>"it is usually best to admit mistakes when they occur, and to seek to restore honor." --Iroh.</q></p>
         </div>
-        
+        <!-- user story 7 -->
         <h2> If you would like to know more please visit this <a id="tribute-link" target="_blank" href="https://avatar.fandom.com/wiki/Iroh">Wiki Entry</a></h2>
     </div>
+
+    
+        
+    
 </body>
 
 </html>
