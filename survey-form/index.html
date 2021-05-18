@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+
+
+    <!-- show textarea when other option is selected from dropdown -->
     <script>
         $(document).ready(function(){
         $("#txtarea1").hide();
@@ -19,7 +22,23 @@
             });
          });
     </script>
+
+    <!-- this code shows hidden divs for auto makers -->
     <script>
+        $(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".div").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".div").hide();
+            }
+        });
+    }).change();
+});
+
      
 
     </script>
@@ -61,6 +80,7 @@
             opacity: .9;
             margin:  0 400px ;
             padding-top: 200px;
+           margin-right: 200px;
             border-radius: 5px;
         }
     
@@ -82,6 +102,7 @@
             margin-left: 16px;
             padding: inherit;
             margin-bottom: 0;
+            width: 90%;
         }
 
         input{
@@ -101,7 +122,8 @@
         .demoinput{
             display: flex;
             flex-direction: column;
-            width: 100% ;
+            width: 90% ;
+            
         }
 
         .checkbox{
@@ -139,6 +161,7 @@
         .model-options{
             display: flex;
             flex-direction: column;
+            
         }
         
         #commentarea{
@@ -181,9 +204,9 @@
             color: grey;
         }
 
-        /* .model-options{
+        .model-options{
             display: none;
-        } */
+        }
     </style>
     
 </head>
@@ -230,12 +253,12 @@
                         <div class="custom-select">
                             <select id="dropdown"  name="brand">
                                 <option disabled selected> Please Select Favorite Automaker.</option>
-                                <option value="Ferrari">Ferrari</option>
-                                <option value="Lamborghini">Lamborghini</option>
-                                <option value="Mclaren">Mclaren</option>
-                                <option value="Porsche">Porsche</option>
-                                <option value="Bugatti">Bugatti</option>
-                                <option value="Koenigsegg">Koenigsegg</option>
+                                <option value="ferrari">Ferrari</option>
+                                <option value="lamborghini">Lamborghini</option>
+                                <option value="mclaren">Mclaren</option>
+                                <option value="porsche">Porsche</option>
+                                <option value="bugatti">Bugatti</option>
+                                <option value="koenigsegg">Koenigsegg</option>
                                 <option value="othermaker">Other</option>
                             </select>
                         </div>
@@ -246,7 +269,7 @@
 
                 <!-- user story 13 -->
             
-                <div id="ferrari1" class="hidden, model-options">
+                <div id="ferrari" class="ferrari div, model-options">
                     
                     <p> Select favorite model.</p> 
                     
@@ -267,7 +290,7 @@
                         <label for="otherferrari"><input type="radio" id="otherferrari" name="ferrari" value=""> Other</label>
                 </div>
 
-                <div id="lamborghini" class="hidden, model-options" >
+                <div id="lamborghini" class="lamborghini div, model-options" >
                     
                     <p> Select favorite model.</p> 
                     <label  for="aventador"><input type="radio" id="aventador" name="lamborghini" value="aventador"> Aventador</label>
@@ -288,7 +311,7 @@
                 </div>
 
 
-                <div id="mclaren"  class="hidden, model-options" >
+                <div id="mclaren"  class="mclaren div, hidden, model-options" >
 
                     <p>Select favorite model.</p> 
 
@@ -307,7 +330,7 @@
                     <label for="otherMclaren"><input type="radio" id="otherMclaren" name="mclaren" value=""> Other</label>   
                 </div>
 
-                <div id="porsche" class="hidden, model-options">
+                <div id="porsche" class="porsche div, hidden, model-options">
                     <p> Select favorite model.</p> 
 
                     <label  for="gt3rs" ><input type="radio" id="gt3rs" name="porsche" value="gt3rs"> GT3 RS</label>
@@ -329,7 +352,7 @@
                     
                     
 
-                <div id="bugatti" class="hidden, model-options">
+                <div id="bugatti" class="bugatti div, hidden, model-options">
 
                     <p>Select favorite model.</p> 
                     <label  for="veyron"><input type="radio" id="veyron" name="bugatti" value="veyron"> Veyron</label>
@@ -343,7 +366,7 @@
                     <label for="otherBuggatti"><input type="radio" id="otherBuggatti" name="bugatti" value=""> Other</label>     
                 </div>
             
-                <div id="keonigsegg" class="hidden, model-options">
+                <div id="keonigsegg" class="koenigsegg div, hidden, model-options">
                     <p>Select favorite model.</p> 
                     <label for="agerar"><input type="radio" id="agerar" name="keonigsegg" value="agerar">  Agera R</label>
                     
