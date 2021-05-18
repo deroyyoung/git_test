@@ -1,61 +1,399 @@
 <!DOCTYPE html> 
-<html lang='eng'>
+<html lang="en">
 <head>
     <title>Survey Form</title>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+        $("#txtarea1").hide();
+        $( "#dropdown").change(function() {
+            var val = $("#dropdown").val();
+             if(val=="othermaker"){
+        $("#txtarea1").show();
+             } else {
+                $("#txtarea1").hide();
+                }
+            });
+         });
+    </script>
+    <script>
+     
+
+    </script>
+
+  
+
+    
+
+
+    <style> 
+
+        body{
+            font-size: 1.2rem;
+            margin: 0;
+            color: #2E54CD
+        }
+
+        #container{
+            
+            background-color: hsl(222, 56%, 25%) ;
+            font-family:'Gill Sans';
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+            width: auto;
+            height: auto; 
+        }
+        
+        #container div{
+          
+          padding: 15px;
+        } 
+        
+
+        .form{
+            background-color: #c6c8d3;
+            text-align: left;
+            opacity: .9;
+            margin:  0 400px ;
+            padding-top: 200px;
+            border-radius: 5px;
+        }
+    
+        #header{
+            color: white;
+            padding-top: 100px;
+            margin-left: 400px;
+            margin-right: 400px;
+            border-radius: 2px;       
+        }
+
+        .textbar{
+            border: none;
+        }
+
+        #automaker{
+            display: flex;
+            flex-direction: column;
+            margin-left: 16px;
+            padding: inherit;
+            margin-bottom: 0;
+        }
+
+        input{
+            border: black;
+            padding: 5px;
+            border-radius: 2px;
+        }
+
+        
+
+        textarea{
+            border-radius: 5px;
+        }
+        
+        
+
+        .demoinput{
+            display: flex;
+            flex-direction: column;
+            width: 100% ;
+        }
+
+        .checkbox{
+            display: flex;
+            flex-direction: column;
+            margin-top: 0px;
+            padding-top: 0;
+        }
+
+        .submitbutton{
+            background-color: #169e6c;
+            display: flex;
+            justify-content: center;
+            width: 10em;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            border: none;
+            padding: .5em;
+            font-size: 1em;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .namelabel{
+            padding-right: 110px;
+            
+        }
+
+        .emaillabel{
+            padding-right: 110px;
+
+        }
+
+        .model-options{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #commentarea{
+            width: 100%;
+        }
+
+        .custom-select{
+            position: relative;
+            margin-left: -18px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        
+        
+        #dropdown{
+            border: none;
+            width: 100%;
+            margin: 0;
+        }
+
+        input[type="radio"]{
+        margin-bottom: 10px;
+       transform: scale(1.3);
+       
+        }   
+
+        input[type="checkbox"]{
+            transform: scale(1.3);
+            
+        }
+
+        select {
+            width: 100%;
+            padding: 5px ;
+            border: none;
+            border-radius: 2px;
+            font-family: inherit;
+            color: grey;
+        }
+
+        /* .model-options{
+            display: none;
+        } */
+    </style>
+    
 </head>
 
 <body>
-    <!-- user story 1 -->
-    <h1 id="title"></h1>
-    <!-- user story 2 -->
-    <p id="description"></p>
-    <!-- user story 3  -->
-    <div>
-        <form id="survey-form" method="GET">
+    <div id="container" >
 
-        <!-- user story 4 -->
-        <label for="Name-label">Name</label>
-        <input type="text" id="name" placeholder="Enter your name" required><br>
-
-        <!-- user story 5 -->
-        <label for="Email-label">Email</label>
-        <!-- user story 6 -->
-        <input type="email" id="email" placeholder="Enter your Email" required><br>
-            
-        <label  for="number-label">Age</label>
-        <!-- user story 7-9 -->
-        <input type="number" id="number" name="Age" min="1" max="100"   required> <br>
-
-
-        <br>
-        <label for="drop-down">drop-down</label>
-        <!-- user story 12 -->
-        <select id="drop-down">drop-down
-            <option value="1">1</option>
-            <option value="2">2</option>
-        </select><br>
-        <!-- user story 13 -->
-        <label for="name">name</label>
-        <input type="radio" id="BMW" name="cars"> <br>
-        <label for="name">name</label> 
-        <input type="radio" id="benz" name="cars"> <br>
+        <header id="header">
+            <!-- user story 1 -->
+            <h1 id="title"> What is your favorite Super Car.</h1>
+            <!-- user story 2 -->
+            <p id="description"> Please fill out the following form.</p>
+            <!-- user story 3  -->
+            </header>
+    
+        <form id="survey-form">
         
-        <!-- user story 14 -->
-        <input  type="checkbox" id="id-1" value="test">
-        <label  for="id-1"> test1</label> <br>
+            <div class="form">
+            
+                <div>
+                    <div class="demoinput">
+                    <!-- user story 4 -->
+                        <label class="namelabel" id="name-label" for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" class="textbar"  required> 
+                    </div>
 
-        <input type="checkbox" id="id-2" value="test">
-        <label for="id-2"> Test2</label> <br>
+                    <div class="demoinput" id="emaildiv">
+                        <!-- user story 5 -->
+                        <label class="emaillabel" id="email-label" for="email">Email</label>
+                        <!-- user story 6 -->
+                        <input type="email" id="email" name="email" placeholder="Enter your Email" class="textbar" required>
+                    </div>
 
-        <!-- user story 15 -->
-        <textarea form="additional-comments"  rows="10" cols="30">
+                    <div class="demoinput" id="agediv">
+                        <label id="number-label" for="number">Age</label> 
+                        <!-- user story 7-9 -->
+                        <input type="number" id="number"  name="number" min="1" max="100"  placeholder="Age" class="textbar" required>
+                    </div>
+                </div>
+                        
+                <div id="automaker" >
+                        <label  for="dropdown" id="makedrop"> Make</label>
+                        <!-- user story 12 -->
+                        <div class="custom-select">
+                            <select id="dropdown"  name="brand">
+                                <option disabled selected> Please Select Favorite Automaker.</option>
+                                <option value="Ferrari">Ferrari</option>
+                                <option value="Lamborghini">Lamborghini</option>
+                                <option value="Mclaren">Mclaren</option>
+                                <option value="Porsche">Porsche</option>
+                                <option value="Bugatti">Bugatti</option>
+                                <option value="Koenigsegg">Koenigsegg</option>
+                                <option value="othermaker">Other</option>
+                            </select>
+                        </div>
+                        <textarea  id="txtarea1" rows="5" cols="30" placeholder="Please List Other Makers."></textarea>
+                </div>
 
-        </textarea>
 
-        <!-- user story 16 -->
-        <input type="submit" value="submit">
+
+                <!-- user story 13 -->
+            
+                <div id="ferrari1" class="hidden, model-options">
+                    
+                    <p> Select favorite model.</p> 
+                    
+                    <label for="f40"><input type="radio" id="f40" name="ferrari" value="f40"> F40</label>
+                    
+                    <label for="f50"><input type="radio" id="f50" name="ferrari" value="F50"> F50</label>
+                    
+                    <label for="laferrai"><input type="radio" id="laferrai" name="ferrari" value="laferrari"> Laferrai</label>
+                    
+                    <label for="testarossa"><input type="radio" id="testarossa" name="ferrari" value="testarossa"> Testarossa</label>
+                    
+                    <label for="enzo"><input type="radio" id="enzo" name="ferrari" value="enzo"> Enzo</label>
+                    
+                    <label for="sf90"><input type="radio" id="sf90" name="ferrari" value="sf90"> SF90 Stradale</label>
+                    
+                    <label for="458"><input type="radio" id="458" name="ferrari" value="458"> 58 Italia</label>
+                
+                        <label for="otherferrari"><input type="radio" id="otherferrari" name="ferrari" value=""> Other</label>
+                </div>
+
+                <div id="lamborghini" class="hidden, model-options" >
+                    
+                    <p> Select favorite model.</p> 
+                    <label  for="aventador"><input type="radio" id="aventador" name="lamborghini" value="aventador"> Aventador</label>
+                    
+                    <label for="hurcan"><input type="radio" id="hurcan" name="lamborghini" value="hurcan"> Hurcan</label>
+                    
+                    <label for="gallardo"><input type="radio" id="gallardo" name="lamborghini" value="gallardo"> Gallardo</label>
+                    
+                    <label for="murcielago"><input type="radio" id="murcielago" name="lamborghini" value="murcielago"> Murcielago</label>
+                    
+                    <label for="diablo"><input type="radio" id="diablo" name="lamborghini" value="diablo"> Diablo</label>
+                    
+                    <label for="countach"><input type="radio" id="countach" name="lamborghini" value="countach"> Countach</label>
+                    
+                    <label for="urus"><input type="radio" id="urus" name="lamborghini" value="urus"> Urus</label>
+                    
+                    <label for="otherLamborghini"><input type="radio" id="otherLamborghini" name="lamborghini" value=""> Other</label>      
+                </div>
+
+
+                <div id="mclaren"  class="hidden, model-options" >
+
+                    <p>Select favorite model.</p> 
+
+                    <label  for="senna"><input type="radio" id="senna" name="mclaren" value="senna"> Senna</label>
+                    
+                    <label for="p1"><input type="radio" id="p1" name="mclaren" value="p1"> P1</label>
+                    
+                    <label for="720s"><input type="radio" id="720s" name="mclaren" value="720s"> 720S</label>
+                
+                    <label for="f1"><input type="radio" id="f1" name="mclaren" value="f1"> F1</label>
+                    
+                    <label for="650s"><input type="radio" id="650s" name="mclaren" value="650s"> 650S</label>
+                    
+                    <label for="gt"><input type="radio" id="gt" name="mclaren" value="gt"> Mclaren GT</label>
+                    
+                    <label for="otherMclaren"><input type="radio" id="otherMclaren" name="mclaren" value=""> Other</label>   
+                </div>
+
+                <div id="porsche" class="hidden, model-options">
+                    <p> Select favorite model.</p> 
+
+                    <label  for="gt3rs" ><input type="radio" id="gt3rs" name="porsche" value="gt3rs"> GT3 RS</label>
+                    
+                    <label for="918"><input type="radio" id="918" name="porsche" value="918"> 918</label>
+                    
+                    <label for="gt2"><input type="radio" id="gt2" name="porsche" value="gt2"> GT2 RS</label>
+                    
+                    <label for="911"><input type="radio" id="911" name="porsche" value="911"> 911R</label>
+                    
+                    <label for="991"><input type="radio" id="991" name="porsche" value="991"> Turbo S 991</label>
+                    
+                    <label for="carrera"><input type="radio" id="carrera" name="porsche" value="carrera">Carrera GT</label>
+                    
+                    <label for="959"><input type="radio" id="959" name="porsche" value="959"> 959</label>
+                     
+                    <label for="otherPorsche"><input type="radio" id="otherPorsche" name="porsche" value=""> Other</label>
+                </div>
+                    
+                    
+
+                <div id="bugatti" class="hidden, model-options">
+
+                    <p>Select favorite model.</p> 
+                    <label  for="veyron"><input type="radio" id="veyron" name="bugatti" value="veyron"> Veyron</label>
+                    
+                    <label for="chiron"><input type="radio" id="chiron" name="bugatti" value="chiron"> Chrion</label>
+                    
+                    <label for="eb110"><input type="radio" id="eb110" name="bugatti" value="eb110"> EB 110</label>
+                    
+                    <label for="divo"><input type="radio" id="divo" name="bugatti" value="divo"> Divo</label>
+                    
+                    <label for="otherBuggatti"><input type="radio" id="otherBuggatti" name="bugatti" value=""> Other</label>     
+                </div>
+            
+                <div id="keonigsegg" class="hidden, model-options">
+                    <p>Select favorite model.</p> 
+                    <label for="agerar"><input type="radio" id="agerar" name="keonigsegg" value="agerar">  Agera R</label>
+                    
+                    <label for="jesko"><input type="radio" id="jesko" name="keonigsegg" value="jesko">Jesko</label>
+                    
+                    <label for="regera"><input type="radio" id="regera" name="keonigsegg" value="regera"> Regera</label>
+                    
+                    <label for="ccx"><input type="radio" id="ccx" name="keonigsegg" value="ccx"> CCX</label>
+                     
+                    <label for="otherkeonigsegg"><input type="radio" id="otherkeonigsegg" name="koenigsegg" value=""> Other</label>
+                </div>
+
+
+                <div class="checkbox">
+                    <p>Pick prefered engine configurations (select that apply).</p>
+                    <!-- user story 14 -->
+                    
+                    <label for="v8"><input class="v8checkbox" type="checkbox" id="v8" name="engineconfig" value="V8">V8</label>
+                    
+                    <label for="w12"><input type="checkbox" id="w12" name="engineconfig" value="v12">W12</label>
+                
+                    <label for="w16"><input type="checkbox" id="w16" name="engineconfig" value="w16">W16</label>
+                    
+                    <label for="v10"><input type="checkbox" id="v10" name="engineconfig" value="v10">V10</label>
+                
+                    <label for="v6"><input type="checkbox" id="v6" name="enginneconfig" value="v6">V6</label>
+                    
+                    <label for="I6"><input type="checkbox" id="I6" name="engineconfig" value="I6">Straight 6</label>
+                    
+                    <label for="H"><input type="checkbox" id="H" name="engineconfig" value="H">H (flat)</label>
+                </div>
+                    
+                    
+                    
+                    
+                <div class="commentarea">
+                    <p>Additional Comments.</p>
+                    <!-- user story 15 -->
+                    <textarea id="commentarea"  name="additional-comments" placeholder="" rows="5" cols="20"></textarea>
+                </div>
+                
+                <div > 
+
+                    <!-- user story 16 -->
+                    <input class="submitbutton" type="submit" id="submit" value="submit">
+
+                </div>
+            </div>
         </form>
     </div>
 </body>
-</html?
+
+</html>
