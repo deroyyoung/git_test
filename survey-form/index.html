@@ -32,11 +32,11 @@
             if(optionValue){
                 $(".div").not("." + optionValue).hide();
                 $("." + optionValue).show();
-            } else{
+            } else {
                 $(".div").hide();
             }
         });
-    }).change();
+    })
 });
 
      
@@ -58,7 +58,8 @@
 
         #container{
             
-            background-color: hsl(222, 56%, 25%) ;
+            /* background-color: hsl(222, 56%, 25%) ; */
+            background-image: linear-gradient(to bottom right, #06c2f9,#0648F9,#06F9B7 );
             font-family:'Gill Sans';
             display: flex;
             flex-direction: column;
@@ -75,22 +76,23 @@
         
 
         .form{
-            background-color: #c6c8d3;
+            background-color: #ecececbe;
+            width: 70%;
             text-align: left;
             opacity: .9;
-            margin:  0 400px ;
+            margin: auto;
             padding-top: 200px;
-           margin-right: 200px;
             border-radius: 5px;
         }
     
         #header{
+            text-align: center;
             color: white;
-            padding-top: 100px;
             margin-left: 400px;
             margin-right: 400px;
             border-radius: 2px;       
         }
+           
 
         .textbar{
             border: none;
@@ -207,6 +209,40 @@
         .model-options{
             display: none;
         }
+
+
+        @media only screen and (max-width: 1080px) {
+
+            #header{
+                margin: 0px;
+                font-size: .8em;
+                display: contents;
+            }
+            .form {
+                align-self: center;
+            }
+                
+                
+            
+                
+        }
+        @media only screen and (max-width: 900px) {
+
+            #header{
+                margin: 0px;
+                font-size: .8em;
+                display: contents;
+            }
+        }
+            
+
+        @media only screen and (max-width: 320px) {
+            .form {
+                margin: 0px;
+                width:auto;
+                
+            }
+        }
     </style>
     
 </head>
@@ -311,7 +347,7 @@
                 </div>
 
 
-                <div id="mclaren"  class="mclaren div, hidden, model-options" >
+                <div id="mclaren"  class="mclaren div, model-options" >
 
                     <p>Select favorite model.</p> 
 
@@ -330,7 +366,7 @@
                     <label for="otherMclaren"><input type="radio" id="otherMclaren" name="mclaren" value=""> Other</label>   
                 </div>
 
-                <div id="porsche" class="porsche div, hidden, model-options">
+                <div id="porsche" class="porsche div, model-options">
                     <p> Select favorite model.</p> 
 
                     <label  for="gt3rs" ><input type="radio" id="gt3rs" name="porsche" value="gt3rs"> GT3 RS</label>
@@ -352,7 +388,7 @@
                     
                     
 
-                <div id="bugatti" class="bugatti div, hidden, model-options">
+                <div id="bugatti" class="bugatti div, model-options">
 
                     <p>Select favorite model.</p> 
                     <label  for="veyron"><input type="radio" id="veyron" name="bugatti" value="veyron"> Veyron</label>
@@ -366,8 +402,8 @@
                     <label for="otherBuggatti"><input type="radio" id="otherBuggatti" name="bugatti" value=""> Other</label>     
                 </div>
             
-                <div id="keonigsegg" class="koenigsegg div, hidden, model-options">
-                    <p>Select favorite model.</p> 
+                <div id="keonigsegg" class="koenigsegg div, model-options">
+                    <p>Select favorite model.</p>
                     <label for="agerar"><input type="radio" id="agerar" name="keonigsegg" value="agerar">  Agera R</label>
                     
                     <label for="jesko"><input type="radio" id="jesko" name="keonigsegg" value="jesko">Jesko</label>
@@ -411,7 +447,7 @@
                 <div > 
 
                     <!-- user story 16 -->
-                    <input class="submitbutton" type="submit" id="submit" value="submit">
+                    <input class="submitbutton" type="submit" id="submit" value="Submit">
 
                 </div>
             </div>
