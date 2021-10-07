@@ -1,1 +1,1 @@
-This is Deroy Young's first git project.
+This was my first git project with Freecodecamp.org.
